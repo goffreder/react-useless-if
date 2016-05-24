@@ -1,0 +1,8 @@
+{
+  "name": "react-useless-if",
+  "version": "1.0.0",
+  "description": "React PropType to check if prop is useless (in relation to other props)",
+  "main": "index.js",
+  "author": "Emanuele Biancardi <goffreder@gmail.com>",
+  "license": "MIT"
+}
