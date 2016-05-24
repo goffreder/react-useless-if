@@ -1,6 +1,9 @@
-module.exports = function requiredIf(type, condition) {
-  return function(props) {
-    const test = condition(props) ? type.isRequired : type;
-    return test.apply(this, arguments);
-  };
+module.exports = function uselessIf(type, condition) {
+    return function(props, propName, componentName) {
+        if (props[propName] !== undefined && condition(props)) {
+            return new Error('Useless prop `' + propName + '` supplied to `' + componentName + '`.');
+        }
+
+        return type.apply(this, arguments);
+    };
 };
